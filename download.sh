@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 source versions.sh
 
 wget -nc -nv \
@@ -11,21 +11,21 @@ wget -nc -nv \
     http://isl.gforge.inria.fr/isl-${V_ISL}.tar.bz2 \
     https://ftp.gnu.org/gnu/gdb/gdb-${V_GDB}.tar.gz \
     https://sourceforge.net/projects/expat/files/expat/${Vw_EXPAT}/expat-${Vw_EXPAT}.tar.bz2 \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libgcc1_${Va_LIBGCC}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libgcc1-dbg_${Va_LIBGCC}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libgcc-6-dev_${Va_LIBGCC}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libatomic1_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libatomic1-dbg_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libstdc++6_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libstdc++6-6-dbg_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libstdc++-6-dev_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libasan3_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libasan3-dbg_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libgomp1_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libgomp1-dbg_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libubsan0_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/gcc-6/libubsan0-dbg_${Va_LIBSTDCPP}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/glibc/libc6_${Va_LIBC}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/glibc/libc6-dbg_${Va_LIBC}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/g/glibc/libc6-dev_${Va_LIBC}_armhf.deb \
-    http://archive.raspbian.org/raspbian/pool/main/l/linux-4.9/linux-libc-dev_${Va_LINUX}_armhf.deb
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libgcc1_${Va_LIBGCC}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libgcc1-dbg_${Va_LIBGCC}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libgcc-6-dev_${Va_LIBGCC}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libatomic1_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libatomic1-dbg_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libstdc++6_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libstdc++6-6-dbg_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libstdc++-6-dev_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libasan3_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libasan3-dbg_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libgomp1_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libgomp1-dbg_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libubsan0_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/gcc-6/libubsan0-dbg_${Va_LIBSTDCPP}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/glibc/libc6_${Va_LIBC}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/glibc/libc6-dbg_${Va_LIBC}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/g/glibc/libc6-dev_${Va_LIBC}_armel.deb \
+    http://ftp.debian.org/debian/pool/main/l/linux/linux-libc-dev_${Va_LINUX}_armel.deb

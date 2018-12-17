@@ -24,9 +24,9 @@ tree:
 	V_GCC=$(V_GCC) makes/tree
 
 tarpkg:
-	mkdir -p raspbian9
-	cp -R tree-install/usr/local/* raspbian9/
-	tar czf Raspbian9-Linux-Toolchain-$(V_GCC).tar.gz raspbian9
+	mkdir -p ev3dev
+	cp -R tree-install/usr/local/* ev3dev/
+	tar czf ev3dev-Linux-Toolchain-$(V_GCC).tar.gz ev3dev
 
 clean:
 	rm -rf binutils* roborio* sysroot* gcc* tree-install gdb* *-Toolchain-*.tar.gz

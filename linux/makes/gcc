@@ -44,10 +44,9 @@ mkdir gcc-install
 cd gcc-build
 ../gcc-${V_GCC}/configure \
     --enable-threads=posix \
-    --target=arm-raspbian9-linux-gnueabihf \
-    --with-arch=armv6 \
-    --with-float=hard \
-    --with-fpu=vfp \
+    --target=arm-ev3dev-linux-gnueabi \
+    --with-arch=armv4t \
+    --with-float=soft \
     --with-specs='%{save-temps: -fverbose-asm} %{funwind-tables|fno-unwind-tables|mabi=*|ffreestanding|nostdlib:;:-funwind-tables}' \
     --enable-languages=c,c++ \
     --with-default-libstdcxx-abi=new \
@@ -55,17 +54,17 @@ cd gcc-build
     --enable-shared \
     --enable-lto \
     --disable-nls \
-    "--with-pkgversion=GCC for Raspbian 9" \
+    "--with-pkgversion=GCC for ev3dev" \
     --with-cloog \
     --disable-multilib \
     --disable-multiarch \
     --prefix=/usr/local \
-    --with-sysroot=/usr/local/arm-raspbian9-linux-gnueabihf \
+    --with-sysroot=/usr/local/arm-ev3dev-linux-gnueabi \
     --enable-poison-system-directories \
     --disable-libmudflap \
-    --with-build-sysroot=/usr/local/arm-raspbian9-linux-gnueabihf \
-    --libdir=/usr/local/arm-raspbian9-linux-gnueabihf/usr/lib \
-    --with-gxx-include-dir=/usr/local/arm-raspbian9-linux-gnueabihf/usr/include/c++/6.3.0 \
+    --with-build-sysroot=/usr/local/arm-ev3dev-linux-gnueabi \
+    --libdir=/usr/local/arm-ev3dev-linux-gnueabi/usr/lib \
+    --with-gxx-include-dir=/usr/local/arm-ev3dev-linux-gnueabi/usr/include/c++/6.3.0 \
     --with-system-zlib \
     || exit $?
 make -j3 all-gcc || exit $?

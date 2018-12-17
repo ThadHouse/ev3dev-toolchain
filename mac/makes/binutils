@@ -5,13 +5,13 @@ mkdir binutils-install
 cd binutils-build
 ../binutils-${V_BINUTILS}/configure \
     --prefix=/usr/local \
-    --target=arm-raspbian9-linux-gnueabihf \
-    "--with-pkgversion=GNU Binutils for Raspbian 9" \
+    --target=arm-ev3dev-linux-gnueabi \
+    "--with-pkgversion=GNU Binutils for ev3dev" \
     --enable-poison-system-directories \
-    --with-sysroot=/usr/local/arm-raspbian9-linux-gnueabihf \
+    --with-sysroot=/usr/local/arm-ev3dev-linux-gnueabi \
     --disable-nls \
     --enable-lto \
-    --with-build-sysroot=/usr/local/arm-raspbian9-linux-gnueabihf \
+    --with-build-sysroot=/usr/local/arm-ev3dev-linux-gnueabi \
     --disable-werror
 make -j3
 DESTDIR=$PWD/../binutils-install make install

@@ -19,7 +19,7 @@ mv *.deb repack/
 pushd repack
 	for file in *.deb; do
 		ar x $file
-		
+
 		# don't need these
 		rm control.tar.gz debian-binary
 		pushd out
@@ -45,28 +45,28 @@ rm -rf repack/out/etc
 rm -d repack/out/*(/^F)
 
 # move "6" to "6.3.0" directories
-#rm repack/out/usr/lib/gcc/arm-linux-gnueabihf/6.3.0
-mv repack/out/usr/lib/gcc/arm-linux-gnueabihf/6 repack/out/usr/lib/gcc/arm-linux-gnueabihf/6.3.0
-rm repack/out/usr/include/arm-linux-gnueabihf/c++/6.3.0
-mv repack/out/usr/include/arm-linux-gnueabihf/c++/6 repack/out/usr/include/arm-linux-gnueabihf/c++/6.3.0
+#rm repack/out/usr/lib/gcc/arm-linux-gnueabi/6.3.0
+mv repack/out/usr/lib/gcc/arm-linux-gnueabi/6 repack/out/usr/lib/gcc/arm-linux-gnueabi/6.3.0
+rm repack/out/usr/include/arm-linux-gnueabi/c++/6.3.0
+mv repack/out/usr/include/arm-linux-gnueabi/c++/6 repack/out/usr/include/arm-linux-gnueabi/c++/6.3.0
 rm repack/out/usr/include/c++/6.3.0
 mv repack/out/usr/include/c++/6 repack/out/usr/include/c++/6.3.0
 
-# move the arm-linux-gnueabihf libs to arm-raspbian9-linux-gnueabihf
-mv repack/out/lib/arm-linux-gnueabihf/* repack/out/lib/
-mv repack/out/usr/lib/arm-linux-gnueabihf/debug/* repack/out/usr/lib/debug/
-rmdir repack/out/usr/lib/arm-linux-gnueabihf/debug
-mv repack/out/usr/lib/arm-linux-gnueabihf/* repack/out/usr/lib/
-mv repack/out/usr/lib/gcc/arm-linux-gnueabihf repack/out/usr/lib/gcc/arm-raspbian9-linux-gnueabihf
+# move the arm-linux-gnueabi libs to arm-ev3dev-linux-gnueabi
+mv repack/out/lib/arm-linux-gnueabi/* repack/out/lib/
+mv repack/out/usr/lib/arm-linux-gnueabi/debug/* repack/out/usr/lib/debug/
+rmdir repack/out/usr/lib/arm-linux-gnueabi/debug
+mv repack/out/usr/lib/arm-linux-gnueabi/* repack/out/usr/lib/
+mv repack/out/usr/lib/gcc/arm-linux-gnueabi repack/out/usr/lib/gcc/arm-ev3dev-linux-gnueabi
 
-# copy the arm-linux-gnueabihf headers to arm-raspbian9-linux-gnueabihf
+# copy the arm-linux-gnueabi headers to arm-ev3dev-linux-gnueabi
 # (we copy instead of move so gdb can find the originals)
-cp -Rp repack/out/usr/include/arm-linux-gnueabihf/* repack/out/usr/include/
+cp -Rp repack/out/usr/include/arm-linux-gnueabi/* repack/out/usr/include/
 
 # change absolute symlinks into relative symlinks
 pushd repack/out/lib
-rm ld-linux-armhf.so.3
-ln -s ld-2.24.so ld-linux-armhf.so.3
+rm ld-linux-armel.so.3
+ln -s ld-2.24.so ld-linux-armel.so.3
 popd
 
 pushd repack/out/usr/lib
@@ -106,7 +106,7 @@ ln -s ../../lib/libthread_db.so.1 libthread_db.so
 ln -s ../../lib/libutil.so.1 libutil.so
 popd
 
-pushd repack/out/usr/lib/gcc/arm-raspbian9-linux-gnueabihf/6.3.0
+pushd repack/out/usr/lib/gcc/arm-ev3dev-linux-gnueabi/6.3.0
 rm libasan.so
 rm libatomic.so
 rm libgcc_s.so.1
@@ -122,10 +122,10 @@ ln -s ../../../libubsan.so.0 libubsan.so
 popd
 
 pushd repack/out/usr/lib
-sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libc.so
-sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libc.so
-sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libpthread.so
-sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libpthread.so
+sed -i 's/\/usr\/lib\/arm-linux-gnueabi\///g' libc.so
+sed -i 's/\/lib\/arm-linux-gnueabi\//..\/..\/lib\//g' libc.so
+sed -i 's/\/usr\/lib\/arm-linux-gnueabi\///g' libpthread.so
+sed -i 's/\/lib\/arm-linux-gnueabi\//..\/..\/lib\//g' libpthread.so
 popd
 
 pushd repack

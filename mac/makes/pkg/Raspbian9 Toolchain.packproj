@@ -467,7 +467,7 @@
 											<key>GID</key>
 											<integer>0</integer>
 											<key>Path</key>
-											<string>../../tree-install/usr/local/arm-raspbian9-linux-gnueabihf</string>
+											<string>../../tree-install/usr/local/arm-ev3dev-linux-gnueabi</string>
 											<key>Path Type</key>
 											<integer>2</integer>
 											<key>Privileges</key>
@@ -768,9 +768,9 @@
 						<key>IFPkgDescriptionDeleteWarning</key>
 						<string></string>
 						<key>IFPkgDescriptionDescription</key>
-						<string>Raspbian9 Toolchain for arm-raspbian9-linux-gnueabihf with GCC and GNU Binutils</string>
+						<string>ev3dev Toolchain for arm-ev3dev-linux-gnueabi with GCC and GNU Binutils</string>
 						<key>IFPkgDescriptionTitle</key>
-						<string>Raspbian9 Toolchain</string>
+						<string>ev3dev Toolchain</string>
 						<key>IFPkgDescriptionVersion</key>
 						<string>2019.04.00</string>
 					</dict>
@@ -778,15 +778,15 @@
 				<key>Display Information</key>
 				<dict>
 					<key>CFBundleGetInfoString</key>
-					<string>Raspbian9 Toolchain Copyrights © 2018 WPI</string>
+					<string>ev3dev Toolchain Copyrights © 2018 WPI</string>
 					<key>CFBundleIconFile</key>
 					<string></string>
 					<key>CFBundleIconFile Path Type</key>
 					<integer>2</integer>
 					<key>CFBundleIdentifier</key>
-					<string>edu.wpi.first.raspbian9-toolchain</string>
+					<string>edu.wpi.first.ev3dev-toolchain</string>
 					<key>CFBundleName</key>
-					<string>Raspbian9 Toolchain</string>
+					<string>ev3dev Toolchain</string>
 					<key>CFBundleShortVersionString</key>
 					<string>2015.103</string>
 				</dict>
@@ -823,7 +823,7 @@
 		<key>IFPkgFlagPackageSelection</key>
 		<integer>1</integer>
 		<key>Name</key>
-		<string>Raspbian9 Toolchain</string>
+		<string>ev3dev Toolchain</string>
 		<key>Status</key>
 		<integer>1</integer>
 		<key>Type</key>

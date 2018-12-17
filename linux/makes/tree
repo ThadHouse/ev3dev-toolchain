@@ -10,7 +10,7 @@ cd tree-install/
 du -hs .
 
 strip usr/local/bin/*
-strip usr/local/arm-raspbian*/bin/*
+strip usr/local/arm-ev3*/bin/*
 find usr/local/libexec -type f |xargs strip
 
 du -hs .

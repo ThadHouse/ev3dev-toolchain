@@ -6,14 +6,14 @@ rsync gcc-install/ tree-install -a --copy-links
 rsync binutils-install/ tree-install -a --copy-links
 rsync sysroot-install/ tree-install -a --copy-links
 rsync gdb-install/ tree-install -a --copy-links
-cd tree-install/c/Users/Public/raspbian9
+cd tree-install/c/Users/Public/ev3dev
 du -hs .
 i686-w64-mingw32-strip bin/*.exe
-i686-w64-mingw32-strip arm-raspbian*/bin/*.exe
+i686-w64-mingw32-strip arm-ev3*/bin/*.exe
 find libexec -name \*.exe | xargs i686-w64-mingw32-strip
 rm -rf share/info share/man
 
-pushd arm-raspbian9-linux-gnueabihf/usr/include
+pushd arm-ev3dev-linux-gnueabi/usr/include
 patch -p4 < ../../../../../../../../makes/case-sensitive-includes.diff
 popd
 rm -rf lib/xtables
